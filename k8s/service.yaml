@@ -9,4 +9,5 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 3000
-  type: LoadBalancer  # Change to NodePort if not on cloud provider
+    nodePort: 31000  # Optional: fixed NodePort
+  type: NodePort
