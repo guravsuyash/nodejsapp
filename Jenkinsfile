@@ -6,7 +6,7 @@ pipeline {
         IMAGE = "${REGISTRY}/node-js-app"
         K8S_DEPLOYMENT_NAME = "nodejs-app"
         K8S_NAMESPACE = "node-js"
-        REGISTRY_CRED = 'registry-creds' // <- your credentials ID
+        REGISTRY_CRED = 'Docker-credentials' // <- your credentials ID
     }
     stages {
         stage('Clone') {
