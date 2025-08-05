@@ -24,7 +24,7 @@ spec:
         app: nodejs-app
     spec:
       containers:
-      - name: your-app
+      - name: nodejs-app
         image: registry.shuttlewhizz.com/registryadmin/node-js-app:latest
       imagePullSecrets:
       - name: regcred
