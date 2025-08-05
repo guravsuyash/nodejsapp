@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: registry.shuttlewhizz.com/registryadmin/node-js-app:latest
+        image: registry.shuttlewhizz.com/node-js-app:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:
