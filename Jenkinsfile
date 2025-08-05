@@ -6,6 +6,7 @@ pipeline {
         IMAGE = "${REGISTRY}/node-js-app"
         K8S_DEPLOYMENT_NAME = "nodejs-app"
         K8S_NAMESPACE = "node-js"
+        REGISTRY_CRED = 'registry-creds' // <- your credentials ID
     }
     stages {
         stage('Clone') {
@@ -19,8 +20,16 @@ pipeline {
             }
         }
         stage('Push') {
+            // steps {
+            //     sh 'docker push $IMAGE:latest'
+            // }
             steps {
-                sh 'docker push $IMAGE:latest'
+                withCredentials([usernamePassword(credentialsId: "${REGISTRY_CRED}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh '''
+                        echo $DOCKER_PASS | docker login $REGISTRY -u $DOCKER_USER --password-stdin
+                        docker push $IMAGE:latest
+                    '''
+                }
             }
         }
         // stage('Deploy') {
