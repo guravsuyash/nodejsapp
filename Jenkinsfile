@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         KUBECONFIG_CRED = 'kubeconfig-id' // Replace with Jenkins credential ID
-        REGISTRY = "https://registry.shuttlewhizz.com:5000"
+        REGISTRY = "registry.shuttlewhizz.com:5000"
         IMAGE = "${REGISTRY}/node-js-app"
         K8S_DEPLOYMENT_NAME = "nodejs-app"
         K8S_NAMESPACE = "node-js"
