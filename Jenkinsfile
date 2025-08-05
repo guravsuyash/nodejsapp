@@ -44,8 +44,8 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: "${KUBECONFIG_CRED}", variable: 'KUBECONFIG')]) {
                     sh 'kubectl config get-contexts'  // test access
-                    // sh "kubectl create namespace $K8S_NAMESPACE --dry-run=client -o yaml | kubectl apply -f -"
-                    // sh "kubectl apply -f k8s -n $K8S_NAMESPACE"
+                    sh "kubectl create namespace $K8S_NAMESPACE --dry-run=client -o yaml | kubectl apply -f -"
+                    sh "kubectl apply -f k8s -n $K8S_NAMESPACE"
                 }
             }
         }
