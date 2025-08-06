@@ -47,8 +47,9 @@ pipeline {
                     sh "kubectl create namespace $K8S_NAMESPACE --dry-run=client -o yaml | kubectl apply -f -"
                     // sh 'echo "Working directory: $(pwd)"'
                     // sh "ls -la"
-                    sh "kubectl apply -f $WORKSPACE/k8s/deployment.yaml -n $K8S_NAMESPACE"
-                    sh "kubectl apply -f $WORKSPACE/k8s/service.yaml -n $K8S_NAMESPACE"
+                    // sh "kubectl apply -f $WORKSPACE/k8s/deployment.yaml -n $K8S_NAMESPACE"
+                    // sh "kubectl apply -f $WORKSPACE/k8s/service.yaml -n $K8S_NAMESPACE"
+                    sh "kubectl apply -f $WORKSPACE/k8 -n $K8S_NAMESPACE"
                 }
             }
         }
