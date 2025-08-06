@@ -9,11 +9,11 @@ pipeline {
         REGISTRY_CRED = 'Docker-credentials' // <- your credentials ID
     }
     stages {
-        stage('Clone') {
-            steps {
-                git url: 'https://github.com/guravsuyash/nodejsapp.git', branch: 'main'
-            }
-        }
+        // stage('Clone') {
+        //     steps {
+        //         git url: 'https://github.com/guravsuyash/nodejsapp.git', branch: 'main'
+        //     }
+        // }
         stage('Build') {
             steps {
                 sh 'docker build -t $IMAGE:latest .'
