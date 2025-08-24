@@ -5,19 +5,23 @@ This repository contains a Node.js application packaged with Docker and managed 
 ## 📁 Project Structure
 ```
 ├── app
-│ ├── public
-│ │ └── styles
-│ │     └── styles.css
-│ ├── routes.js
-│ └── server
-│     └── views
-│         └── index.ejs
+│   ├── public
+│   │   └── styles
+│   │       └── styles.css
+│   ├── routes.js
+│   └── server
+│       └── views
+│           └── index.ejs
 ├── app.js
 ├── docker-compose.yml
 ├── Dockerfile
+├── Jenkinsfile
+├── k8
+│   ├── deployment.yaml
+│   └── service.yaml
 ├── package-lock.json
 ├── package.json
-└── README.md
+└── readme.md
 ```
 
 
